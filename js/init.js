@@ -1,5 +1,7 @@
 window.onload = function() {
 
+    initUI();
+
     // prev canvas shedule
     var prevCanvasShedule; 
     prevCanvasShedule = new canvasShedule('#set_item_change_preview' );
@@ -30,5 +32,5 @@ window.onload = function() {
     var sqCanvasShedule = new canvasShedule('#sequance_canvas' );
     sqCanvasShedule.clearRect('#d3d3d3');
 
-
+    // 
 }

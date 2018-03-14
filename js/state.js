@@ -7,6 +7,6 @@ var state = {
     // 2 - 8 
     generedPerTitle: 2,
 
-    isPlayed = false
+    isPlayed: false
 
 }
