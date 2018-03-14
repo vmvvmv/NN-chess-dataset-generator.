@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js">
-</script>
-<script>
-$(document).ready(function(){
-    $("button").click(function(){
-        $("p").hide();
-    });
-});
-</script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js">
+    </script>
+    <script>
+
+
+
+    </script>
 </head>
+
 <body>
 
-<h2>This is a heading</h2>
+    <div id="top_controll_panel">
 
-<p>This is a paragraph.</p>
-<p>This is another paragraph.</p>
+        <canvas id="set_item_change_preview" width="800" height="300"  style="border:1px solid #000000;"></canvas>
 
-<button>Click me</button>
+        <div style = "display: inline-block;">
+            <form id = "controll form" style = "position: absolute; top:0;">
+                First name:<br>
+                <input type="text" name="firstname" value="Mickey">
+                <br>
+                Last name:<br>
+                <input type="text" name="lastname" value="Mouse">
+                <br><br>
+                <input type="submit" value="Submit">
+            </form> 
+        </div>
+
+    </div>
 
 </body>
+
 </html>
