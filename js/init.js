@@ -13,24 +13,23 @@ window.onload = function() {
 
     // grey scale
     var greyScale = new GreyScale(hiddenCanvasShedule);
-    var grayIM = greyScale.grey(figuresSet[6].image);
 
     // random shuffle
 
     var randomShuffled = new RandomShuffled(hiddenCanvasShedule);
-    var rIM = randomShuffled.shuffle(grayIM);
-    rIM = randomShuffled.shuffle(rIM);
-    rIM = randomShuffled.shuffle(rIM);
-    rIM = randomShuffled.shuffle(rIM);
-    
-    // prev panel state
-    var testState = makeDrawState(figuresSet[6].image, grayIM, rIM);
-    prevCanvasShedule.customDraw(testState);
 
     // sequance_canvas shedule
 
     var sqCanvasShedule = new canvasShedule('#sequance_canvas' );
     sqCanvasShedule.clearRect('#d3d3d3');
+    
+    // prev panel state test
+
+    var grayIM = greyScale.grey(figuresSet[6].image);
+    var rIM = randomShuffled.shuffle(grayIM);
+
+    var testState = makeDrawState(figuresSet[6].image, grayIM, rIM);
+    prevCanvasShedule.customDraw(testState);
 
     // 
 }

@@ -1,4 +1,3 @@
-var generedPerTitle = 2;
 var state = {
 
     // 0 step by step,  1 sequance
