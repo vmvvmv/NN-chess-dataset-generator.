@@ -4,6 +4,15 @@ function start () {
     state.isPlayed = true;
     console.log('start');
 
+    if ( state.mode === 0 ) {
+
+        console.log( ' for sequance must be mode on ' );
+
+    } else {
+
+        generator.sequance();
+
+    }
 
 }
 
@@ -16,6 +25,7 @@ function stop () {
 
 function next () {
 
+    generator.next();
     console.log('next');
 
 }

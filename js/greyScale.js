@@ -19,6 +19,8 @@ GreyScale.prototype.grey = function ( image ) {
 
     this.canvasShedule.drawImage(image, 0, 0);
 
+    console.log( this.canvasShedule.width);
+
     var imgPixels = this.canvasShedule.ctx.getImageData(0, 0, width, height);
 
     for(var y = 0; y < height; y++) {
@@ -39,6 +41,9 @@ GreyScale.prototype.grey = function ( image ) {
     var image = new Image();
     image.src = this.canvasShedule.canvas.toDataURL("image/png", 1);
 
+    this.canvasShedule.canvas.width = 400;
+    this.canvasShedule.canvas.height = 400;
+    this.canvasShedule.ctx = this.canvasShedule.canvas.getContext('2d');
     this.canvasShedule.clearRect();
     
     return image;
