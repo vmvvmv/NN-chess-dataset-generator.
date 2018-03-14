@@ -1,3 +1,4 @@
+// change image color to grey scale
 
 function GreyScale ( canvasShedule ) {
 

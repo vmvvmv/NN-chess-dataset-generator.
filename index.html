@@ -21,10 +21,10 @@
             // hidden canvas shedule
             hiddenCanvasShedule = new canvasShedule('#hiddenImportCanvas' );
             var greyScale = new GreyScale(hiddenCanvasShedule);
-            var grayIM = greyScale.grey(figuresSet[33].image);
+            var grayIM = greyScale.grey(figuresSet[6].image);
             
             // prev panel state
-            var testState = makeDrawState(figuresSet[33].image,grayIM,figuresSet[2].image);
+            var testState = makeDrawState(figuresSet[6].image,grayIM,figuresSet[6].image);
             prevCanvasShedule.customDraw(testState);
 
         
@@ -58,9 +58,12 @@
                         <option value="7">
                         <option value="8">
                     </datalist>
+                    <br>
+                    generated item per image:<label id = " range "> 4 </label>
                     <hr>
 
-                    <button id = "play" style = "box-sizing: border-box; width: 28px;height: 28px; border-width: 14px 0px 14px 28px; border-color: transparent transparent transparent #d60a0a; " ></button>
+                    <!-- <button id = "play" style = "box-sizing: border-box; width: 28px;height: 28px; border-width: 14px 0px 14px 28px; border-color: transparent transparent transparent #d60a0a; " ></button> -->
+                    <button id = "stop">START</button>
                     <button id = "stop">STOP</button>
                     <button id = "next">></button>
             </form> 
