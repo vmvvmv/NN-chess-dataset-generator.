@@ -2,28 +2,18 @@ window.onload = function() {
 
     initUI();
 
-    // prev canvas shedule
-    var prevCanvasShedule; 
-    prevCanvasShedule = new canvasShedule('#set_item_change_preview' );
-    prevCanvasShedule.clearRect();
-    prevCanvasShedule.customDraw = drawSeq;
-
-    // hidden canvas shedule
+    var prevCanvasShedule = new canvasShedule('#set_item_change_preview' );; 
+    var sqCanvasShedule = new canvasShedule('#sequance_canvas' );
     var hiddenCanvasShedule = new canvasShedule('#hiddenImportCanvas' );
 
-    // grey scale
     var greyScale = new GreyScale(hiddenCanvasShedule);
-
-    // random shuffle
-
     var randomShuffled = new RandomShuffled(hiddenCanvasShedule);
 
-    // sequance_canvas shedule
 
-    var sqCanvasShedule = new canvasShedule('#sequance_canvas' );
+    // prev canvas shedule TEST
     sqCanvasShedule.clearRect('#d3d3d3');
-    
-    // prev panel state test
+    prevCanvasShedule.clearRect();
+    prevCanvasShedule.customDraw = drawSeq;
 
     var grayIM = greyScale.grey(figuresSet[6].image);
     var rIM = randomShuffled.shuffle(grayIM);
