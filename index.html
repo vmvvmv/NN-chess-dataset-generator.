@@ -12,6 +12,8 @@
         window.onload = function() {
 
             prevCanvasShedule = new canvasShedule('#set_item_change_preview' );
+            prevCanvasShedule.clearRect();
+            prevCanvasShedule.drawImage( figuresSet[0].image, 10, 10);
         
         }
         
