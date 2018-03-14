@@ -8,38 +8,12 @@
     <script src="js/changeSeqDraw.js"> </script>
     <script src="js/greyScale.js"> </script>
     <script src="js/randomShufled.js"> </script>
+    <script src="js/init.js"> </script>
     <script>
 
-        var prevCanvasShedule; 
-
-        window.onload = function() {
-
-            // prev canvas shedule
-            prevCanvasShedule = new canvasShedule('#set_item_change_preview' );
-            prevCanvasShedule.clearRect();
-            prevCanvasShedule.customDraw = drawSeq;
-
-            // hidden canvas shedule
-            hiddenCanvasShedule = new canvasShedule('#hiddenImportCanvas' );
-
-            // grey scale
-            var greyScale = new GreyScale(hiddenCanvasShedule);
-            var grayIM = greyScale.grey(figuresSet[6].image);
-
-            // random shuffle
-
-            var randomShuffled = new RandomShuffled(hiddenCanvasShedule);
-            var rIM = randomShuffled.shuffle(grayIM);
-            rIM = randomShuffled.shuffle(rIM);
-            rIM = randomShuffled.shuffle(rIM);
-            rIM = randomShuffled.shuffle(rIM);
-            
-            // prev panel state
-            var testState = makeDrawState(figuresSet[6].image, grayIM, rIM);
-            prevCanvasShedule.customDraw(testState);
+        
 
         
-        }
         
     </script>
 </head>
@@ -88,7 +62,7 @@
 
     <div>
 
-        <canvas id="sequance canvas" width="1024" height="920"  style="border:3px solid cadetblue;"></canvas>
+        <canvas id="sequance_canvas" width="1024" height="920"  style="border:3px solid cadetblue;"></canvas>
 
     </div>
 
