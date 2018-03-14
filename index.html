@@ -16,7 +16,9 @@
             prevCanvasShedule.clearRect();
             prevCanvasShedule.customDraw = drawSeq;
 
-            prevCanvasShedule.customDraw(figuresSet[0].image);
+            var testState = makeDrawState(figuresSet[33].image,figuresSet[7].image,figuresSet[2].image);
+
+            prevCanvasShedule.customDraw(testState);
         
         }
         
