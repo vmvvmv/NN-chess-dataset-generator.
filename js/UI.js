@@ -28,8 +28,15 @@ function initUI() {
 
     $('input[type=range]').on('input', function ( ) {
         state.generedPerTitle = $(this).val();
-        console.log(state.generedPerTitle);
+        console.log('range value ->', state.generedPerTitle);
         $("#range").html(state.generedPerTitle);
+    });
+
+    $("#changeState").click(function(){
+
+        state.mode = $("input[name='changeState']:checked").val();
+        console.log( 'state mode ->', state.mode);
+
     });
 
 }
