@@ -38,6 +38,8 @@ GreyScale.prototype.grey = function ( image ) {
     var image = new Image();
     image.src = this.canvasShedule.canvas.toDataURL("image/png", 1);
 
+    this.canvasShedule.clearRect();
+    
     return image;
 
 }
