@@ -18,7 +18,7 @@
         <canvas id="set_item_change_preview" width="800" height="300"  style="border:4px solid mediumblue;"></canvas>
 
         <div style = "display: inline-block;">
-            <form id = "controll form" style = "position: absolute; top:0; border:5px solid #d10d0d;">
+            <form id = "controll form" style = "position: absolute; top:0; border:3px solid #d10d0d;">
                     mode: <br>
                     <input type="radio" name="createState" value="step" checked> step by step<br>
                     <input type="radio" name="createState" value="sequance"> sequance <br>
@@ -37,6 +37,14 @@
                         <option value="8">
                     </datalist>
                     <hr>
+
+                    <button id = "play" style = "box-sizing: border-box; width: 28px;height: 28px; border-width: 14px 0px 14px 28px; border-color: transparent transparent transparent #d60a0a; " ></button>
+                    <button id = "stop">STOP</button>
+                    <button id = "next">></button>
+            </form> 
+            <form id = "status_form" style = "position:absolute; top:0; right:500px; border:9px solid #d10d0d; float:left">
+                    <label id = "status">....deveop state.... </label><br><br><br><br><br>
+                    <button id = "save">save ZIP</button>
             </form> 
         </div>
 
@@ -47,6 +55,8 @@
         <canvas id="sequance canvas" width="1024" height="920"  style="border:3px solid cadetblue;"></canvas>
 
     </div>
+
+    <canvas id="hiddenImportCanvas" width="200" height="200" style="visibility:hidden;"></canvas>
 
 </body>
 
