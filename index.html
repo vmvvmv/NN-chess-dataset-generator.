@@ -7,6 +7,7 @@
     <script src="js/canvasSchedule.js"> </script>
     <script src="js/changeSeqDraw.js"> </script>
     <script src="js/greyScale.js"> </script>
+    <script src="js/randomShufled.js"> </script>
     <script>
 
         var prevCanvasShedule; 
@@ -20,11 +21,21 @@
 
             // hidden canvas shedule
             hiddenCanvasShedule = new canvasShedule('#hiddenImportCanvas' );
+
+            // grey scale
             var greyScale = new GreyScale(hiddenCanvasShedule);
             var grayIM = greyScale.grey(figuresSet[6].image);
+
+            // random shuffle
+
+            var randomShuffled = new RandomShuffled(hiddenCanvasShedule);
+            var rIM = randomShuffled.shuffle(grayIM);
+            rIM = randomShuffled.shuffle(rIM);
+            rIM = randomShuffled.shuffle(rIM);
+            rIM = randomShuffled.shuffle(rIM);
             
             // prev panel state
-            var testState = makeDrawState(figuresSet[6].image,grayIM,figuresSet[6].image);
+            var testState = makeDrawState(figuresSet[6].image, grayIM, rIM);
             prevCanvasShedule.customDraw(testState);
 
         
