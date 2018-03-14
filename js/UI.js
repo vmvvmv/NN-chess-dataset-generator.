@@ -26,7 +26,11 @@ function initUI() {
     $( '#stop' ).click(stop);
     $( '#next' ).click(next);
 
+    $('input[type=range]').on('input', function ( ) {
+        state.generedPerTitle = $(this).val();
+        console.log(state.generedPerTitle);
+        $("#range").html(state.generedPerTitle);
+    });
+
 }
 
-// $( '#start' ).get(0).click(start);
-// console.log($( '#start' ));
