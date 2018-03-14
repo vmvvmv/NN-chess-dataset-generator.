@@ -6,19 +6,27 @@
     <script src="js/imageLoader.js"> </script>
     <script src="js/canvasSchedule.js"> </script>
     <script src="js/changeSeqDraw.js"> </script>
+    <script src="js/greyScale.js"> </script>
     <script>
 
         var prevCanvasShedule; 
 
         window.onload = function() {
 
+            // prev canvas shedule
             prevCanvasShedule = new canvasShedule('#set_item_change_preview' );
             prevCanvasShedule.clearRect();
             prevCanvasShedule.customDraw = drawSeq;
 
-            var testState = makeDrawState(figuresSet[33].image,figuresSet[7].image,figuresSet[2].image);
-
+            // hidden canvas shedule
+            hiddenCanvasShedule = new canvasShedule('#hiddenImportCanvas' );
+            var greyScale = new GreyScale(hiddenCanvasShedule);
+            var grayIM = greyScale.grey(figuresSet[33].image);
+            
+            // prev panel state
+            var testState = makeDrawState(figuresSet[33].image,grayIM,figuresSet[2].image);
             prevCanvasShedule.customDraw(testState);
+
         
         }
         
@@ -56,7 +64,7 @@
                     <button id = "stop">STOP</button>
                     <button id = "next">></button>
             </form> 
-            <form id = "status_form" style = "position:absolute; top:0; right:500px; border:9px solid #d10d0d; float:left">
+            <form id = "status_form" style = "position:absolute; top:0; right:20%; border:9px solid #d10d0d; float:left">
                     <label id = "status">....deveop state.... </label><br><br><br><br><br>
                     <button id = "save">save ZIP</button>
             </form> 

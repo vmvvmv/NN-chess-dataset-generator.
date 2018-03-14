@@ -12,9 +12,11 @@ function canvasShedule ( id ) {
     this.customDraw;
 }
 
-canvasShedule.prototype.clearRect = function () {
+canvasShedule.prototype.clearRect = function ( color ) {
 
-    this.ctx.fillStyle="white";
+    color = color || 'white'
+
+    this.ctx.fillStyle=color;
     this.ctx.fillRect(0,0,this.width,this.height);
 
 }
