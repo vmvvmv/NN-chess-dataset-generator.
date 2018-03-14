@@ -4,10 +4,17 @@
 <head>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"> </script>
     <script src="js/imageLoader.js"> </script>
+    <script src="js/canvasSchedule.js"> </script>
     <script>
 
+        var prevCanvasShedule; 
 
+        window.onload = function() {
 
+            prevCanvasShedule = new canvasShedule('#set_item_change_preview' );
+        
+        }
+        
     </script>
 </head>
 
