@@ -5,6 +5,7 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"> </script>
     <script src="js/imageLoader.js"> </script>
     <script src="js/canvasSchedule.js"> </script>
+    <script src="js/changeSeqDraw.js"> </script>
     <script>
 
         var prevCanvasShedule; 
@@ -13,7 +14,9 @@
 
             prevCanvasShedule = new canvasShedule('#set_item_change_preview' );
             prevCanvasShedule.clearRect();
-            prevCanvasShedule.drawImage( figuresSet[0].image, 10, 10);
+            prevCanvasShedule.customDraw = drawSeq;
+
+            prevCanvasShedule.customDraw(figuresSet[0].image);
         
         }
         

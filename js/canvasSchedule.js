@@ -1,4 +1,5 @@
 
+// simple API for select canvas and draw on
 
 function canvasShedule ( id ) {
 
@@ -7,6 +8,8 @@ function canvasShedule ( id ) {
     this.width = this.canvas.width;
     this.height = this.canvas.height;
 
+    // function for drawe on custom order
+    this.customDraw;
 }
 
 canvasShedule.prototype.clearRect = function () {
@@ -21,3 +24,4 @@ canvasShedule.prototype.drawImage = function ( img, x, y ) {
     this.ctx.drawImage( img,x,y );
 
 }
+
