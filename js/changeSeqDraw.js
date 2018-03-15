@@ -24,6 +24,19 @@ function drawSeq ( drawState ) {
 
 function makeDrawState ( original, grayscale, randomShuffled ) {
 
+    console.log(' -= DRAW STATE =-   TOP STATUS CANVAS');
+
+    console.log('original --->', original, ' width: ', original.width, ' height: ', original.height);
+    console.log();
+    console.log('grayscale --->', grayscale, ' width: ', grayscale.width, ' height: ', grayscale.height);
+    console.log();
+    console.log( 'randomShuffled may be grayscle, weakest part of drawing on this moment');
+    console.log();
+    console.log('randomShuffled --->', randomShuffled, ' width: ', randomShuffled.width, ' height: ', randomShuffled.height);
+
+    console.log(' for grayscale and randomShuffled needed hidden canvas resize, sometimes resize to 0');
+    console.log(' possible async when created imageDOM element');
+
     return { original:original, grayscale:grayscale, randomShuffled: randomShuffled }; 
 
 }
