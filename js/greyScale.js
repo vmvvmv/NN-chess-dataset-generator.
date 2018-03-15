@@ -4,6 +4,16 @@ function GreyScale ( canvasShedule ) {
 
     this.canvasShedule = canvasShedule;
 
+    this.currentImage = new Image();
+
+}
+
+
+
+function cloneImg( sourceImage ) {
+
+    return sourceImage.cloneNode(true);
+
 }
 
 GreyScale.prototype.grey = function ( image, callback ) {
@@ -36,26 +46,44 @@ GreyScale.prototype.grey = function ( image, callback ) {
             imgPixels.data[i + 2] = avg;
             
         }
+    
+        if(y === height - 1) {
+
+            this.canvasShedule.ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
+            this.currentImage.src = this.canvasShedule.canvas.toDataURL("image/png", 1);
+            this.canvasShedule.canvas.width = 400;
+            this.canvasShedule.canvas.height = 400;
+            this.canvasShedule.ctx = this.canvasShedule.canvas.getContext('2d');
+            this.canvasShedule.clearRect();
+        
+            // possible return image data and call putData instead drawImage
+            return cloneImg(this.currentImage);
+
+        }
     }
 
-    this.canvasShedule.ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
 
-    var image = new Image();
-    console.log('image onload start');
-    var that = this;
-    image.onload = function() {
+    // var image = new Image();
+    // console.log('image onload start');
+    // var that = this;
+    // image.onload = function() {
         
-        image.src = this.canvasShedule.canvas.toDataURL("image/png", 1);
+    //     console.log('onload im');
 
-        that.canvasShedule.canvas.width = 400;
-        that.canvasShedule.canvas.height = 400;
-        that.canvasShedule.ctx = that.canvasShedule.canvas.getContext('2d');
-        that.canvasShedule.clearRect();
+    //     image.src = this.canvasShedule.canvas.toDataURL("image/png", 1);
+
+    //     that.canvasShedule.canvas.width = 400;
+    //     that.canvasShedule.canvas.height = 400;
+    //     that.canvasShedule.ctx = that.canvasShedule.canvas.getContext('2d');
+    //     that.canvasShedule.clearRect();
         
-        console.log(callback, 'image callback');
-        callback(image);
+    //     console.log(callback, 'image callback');
+    //     callback(image);
 
-    };
+    // };
+
+
+    // console.log(this.canvasShedule.canvas.toDataURL("image/png", 1));
 
 
 }

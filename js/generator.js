@@ -19,21 +19,33 @@ generator.next = function () {
 
         var grayIM;
 
-        var callback = function( image ) {
+        // var callback = function( image ) {
 
-            grayIM = image;
-            console.log( 'grayIM in callback seqDraw', grayIM );
+        //     grayIM = image;
+        //     console.log( 'grayIM in callback seqDraw', grayIM );
 
-            var testState = makeDrawState(figuresSet[generator.position].image, grayIM, grayIM);
-            prevCanvasShedule.customDraw(testState);
+        //     var testState = makeDrawState(figuresSet[generator.position].image, grayIM, grayIM);
+        //     prevCanvasShedule.customDraw(testState);
     
-            if( generator.position < figuresSet.length - 1 )
-                generator.position++;
-            else 
-                console.log('set is over');
+        //     if( generator.position < figuresSet.length - 1 )
+        //         generator.position++;
+        //     else 
+        //         console.log('set is over');
             
-        }
+        // }
 
+        grayIM = image;
+        console.log( 'grayIM in callback seqDraw', grayIM );
+
+        var testState = makeDrawState(figuresSet[generator.position].image, grayIM, grayIM);
+        prevCanvasShedule.customDraw(testState);
+
+        if( generator.position < figuresSet.length - 1 )
+            generator.position++;
+        else 
+            console.log('set is over');
+
+        var callback = null;
         greyScale.grey(figuresSet[generator.position].image, callback);
         // var rIM = randomShuffled.shuffle(grayIM);
     
@@ -45,8 +57,6 @@ generator.sequance = function () {
 
         if(state.mode === 0 )
         return;
-
-
 
         generator.next();
 
