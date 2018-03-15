@@ -79,10 +79,10 @@ generator.sequance = function () {
 
             for ( var i = generator.position; i < figuresSet.length - 1; i++ ) {
 
-                console.log( i );
+                // console.log( i );
                 
                 // this part must by async
-                console.log(state.mode);
+                // console.log(state.mode);
                 if(state.mode === 0 )
                 return;
 
