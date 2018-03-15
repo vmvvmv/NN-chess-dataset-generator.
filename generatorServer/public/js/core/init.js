@@ -7,6 +7,7 @@ window.onload = function() {
 
     window.greyScale = new GreyScale(hiddenCanvasShedule);
     window.randomShuffled = new RandomShuffled(hiddenCanvasShedule);
+    window.traningDataGenerator = new TraningDataGenerator(hiddenCanvasShedule); 
 
     // 
     generator.ready();
