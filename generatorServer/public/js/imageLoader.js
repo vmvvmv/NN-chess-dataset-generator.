@@ -5,6 +5,8 @@ var greyScaleSet = [];
 
 var shuffLedSet = [];
 
+var trainingData = [];
+
 // 1-2 black officer
 
 function getType( index ) {

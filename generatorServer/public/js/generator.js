@@ -50,7 +50,17 @@ generator.next = function () {
         var testState = makeDrawState(figuresSet[generator.position].image, grayIM, rIM);
         prevCanvasShedule.customDraw(testState);
 
+        //---------------PART FOR TRAINING DATA GENERATOR -------------------------------
 
+
+        for ( var i = 0; i < state.generedPerTitle; i++ ) {
+
+            // console.log('train image generated');
+
+        }
+
+
+        //-------------------------------------------------------------------------------
     
 }
 
