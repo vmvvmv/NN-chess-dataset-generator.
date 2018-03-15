@@ -24,13 +24,11 @@ generator.next = function () {
         greyScale.grey(figuresSet[generator.position].image);
         var grayIM = greyScaleSet[generator.position];
 
-        var rIM = randomShuffled.shuffle(grayIM);
-
-        // console.log('greyIM ', grayIM);
+        randomShuffled.shuffle(grayIM);
+        var rIM = shuffLedSet[generator.position];
 
         var testState = makeDrawState(figuresSet[generator.position].image, grayIM, rIM);
         prevCanvasShedule.customDraw(testState);
-
 
         //-------------------------set is over code -------------------
         if( generator.position < figuresSet.length - 1 )

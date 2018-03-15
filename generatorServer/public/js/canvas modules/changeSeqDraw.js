@@ -10,19 +10,20 @@ function drawSeq ( drawState ) {
     this.ctx.font = "17px Arial";
     this.ctx.fillStyle="black";
 
+    // original
     var orWidth = drawState.original.width;
     this.drawImage( drawState.original, 0 + offset, offset);
     this.ctx.fillText("original",0 + offset, offset / 2 );
 
-    // console.log(drawState.grayscale);
+    // greyScale
     var grWidth = drawState.grayscale.width + orWidth + offset;
-
     this.putData( drawState.grayscale.imageSrc, grWidth , offset, drawState.grayscale.width, drawState.grayscale.height);
     this.ctx.fillText("grayscale", grWidth , offset / 2);
 
-    // var rsWidth = 100  + grWidth;
-    // this.putData( drawState.randomShuffled, rsWidth + offset * 2, offset);
-    // this.ctx.fillText("random shuffled",rsWidth + offset * 2, offset / 2);
+    // random Shuffled
+    var rsWidth = drawState.grayscale.width + grWidth + offset;
+    this.putData( drawState.randomShuffled.imageSrc, rsWidth, offset);
+    this.ctx.fillText("random shuffled",rsWidth, offset / 2);
 
 }
 
@@ -41,12 +42,10 @@ function makeDrawState ( original, grayscale, randomShuffled ) {
     console.log();
     console.log('grayscale --->', grayscale, ' width: ', grayscale.width, ' height: ', grayscale.height);
     console.log();
-    // console.log( 'randomShuffled may be grayscle, weakest part of drawing on this moment');
-    // console.log();
-    // console.log('randomShuffled --->', randomShuffled, ' width: ', randomShuffled.width, ' height: ', randomShuffled.height);
+    console.log( 'randomShuffled may be grayscle, weakest part of drawing on this moment');
+    console.log();
+    console.log('randomShuffled --->', randomShuffled, ' width: ', randomShuffled.width, ' height: ', randomShuffled.height);
 
-    // console.log(' for grayscale and randomShuffled needed hidden canvas resize, sometimes resize to 0');
-    // console.log(' possible async when created imageDOM element');
 
     return { original:original, grayscale:grayscale, randomShuffled: randomShuffled }; 
 
