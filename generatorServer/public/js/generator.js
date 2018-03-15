@@ -15,6 +15,9 @@ generator.setIsOver = false;
 
 generator.next = function () {
 
+        console.log('grey set', greyScaleSet);
+        console.log('random shuffled state', shuffLedSet);
+        console.log('train data', trainingData);
         //-------------------------set is over code -------------------
         if( generator.setIsOver ) {
 
@@ -56,6 +59,7 @@ generator.next = function () {
         for ( var i = 0; i < state.generedPerTitle; i++ ) {
 
             // console.log('train image generated');
+            traningDataGenerator.makeTrainData( grayIM );
 
         }
 
@@ -71,9 +75,6 @@ generator.sequance = function () {
             for ( var i = generator.position; i < figuresSet.length - 1; i++ ) {
 
                 console.log( i );
-
-                console.log('grey set', greyScaleSet);
-                console.log('random shuffled state', shuffLedSet);
                 
                 // this part must by async
                 console.log(state.mode);
