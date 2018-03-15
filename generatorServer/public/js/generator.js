@@ -59,7 +59,8 @@ generator.next = function () {
         for ( var i = 0; i < state.generedPerTitle; i++ ) {
 
             // console.log('train image generated');
-            traningDataGenerator.makeTrainData( grayIM );
+            var newRim = shuffLedSet[generator.position];
+            traningDataGenerator.makeTrainData( newRim );
 
         }
 
