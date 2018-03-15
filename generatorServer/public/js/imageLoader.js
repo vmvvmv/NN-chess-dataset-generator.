@@ -3,6 +3,8 @@ var figuresSet = [];
 
 var greyScaleSet = [];
 
+var shuffLedSet = [];
+
 // 1-2 black officer
 
 function getType( index ) {

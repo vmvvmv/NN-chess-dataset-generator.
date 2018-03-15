@@ -27,11 +27,11 @@ GreyScale.prototype.grey = function ( image, callback ) {
 
     this.canvasShedule.drawImage(image, 0, 0);
 
-    console.log( this.canvasShedule.width);
+    // console.log( this.canvasShedule.width);
 
     var imgPixels = this.canvasShedule.ctx.getImageData(0, 0, width, height);
 
-    console.log(imgPixels);
+    // console.log(imgPixels);
 
     for(var y = 0; y < height; y++) {
 
@@ -50,9 +50,9 @@ GreyScale.prototype.grey = function ( image, callback ) {
 
     // this.canvasShedule.ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
         
-    greyScaleSet.push( { imageSrc:imgPixels } );
+    greyScaleSet.push( { imageSrc:imgPixels, width: width, height: height  } );
 
-    console.log(greyScaleSet);
+    // console.log(greyScaleSet);
     
 
     // RESET CANVAS FOR NEW DRAWING

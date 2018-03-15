@@ -20,17 +20,16 @@ generator.next = function () {
         prevCanvasShedule.customDraw = drawSeq;
 
 
-        console.log(greyScaleSet);
+        // console.log(greyScaleSet);
         greyScale.grey(figuresSet[generator.position].image);
-        var grayIM = greyScaleSet[generator.position].imageSrc;
+        var grayIM = greyScaleSet[generator.position];
 
-        // var rIM = randomShuffled.shuffle(grayIM);
+        var rIM = randomShuffled.shuffle(grayIM);
 
-        console.log('greyIM ', grayIM);
+        // console.log('greyIM ', grayIM);
 
-        var testState = makeDrawState(figuresSet[generator.position].image, grayIM, grayIM);
+        var testState = makeDrawState(figuresSet[generator.position].image, grayIM, rIM);
         prevCanvasShedule.customDraw(testState);
-
 
 
         //-------------------------set is over code -------------------
