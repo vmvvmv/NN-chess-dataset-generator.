@@ -15,15 +15,14 @@ function drawSeq ( drawState ) {
     this.ctx.fillText("original",0 + offset, offset / 2 );
 
     console.log(drawState.grayscale);
-    // var grWidth = drawState.grayscale[0].length + orWidth;
-    var grWidth = 100;
+    var grWidth = 200;
 
     this.putData( drawState.grayscale, grWidth + offset , offset);
     this.ctx.fillText("grayscale", grWidth + offset , offset / 2);
 
-    // var rsWidth = drawState.randomShuffled[0].length  + grWidth;
-    // this.putData( drawState.randomShuffled, rsWidth + offset * 2, offset);
-    // this.ctx.fillText("random shuffled",rsWidth + offset * 2, offset / 2);
+    var rsWidth = 100  + grWidth;
+    this.putData( drawState.randomShuffled, rsWidth + offset * 2, offset);
+    this.ctx.fillText("random shuffled",rsWidth + offset * 2, offset / 2);
 
 }
 
@@ -31,6 +30,7 @@ function makeDrawState ( original, grayscale, randomShuffled ) {
 
     console.log(' params ', original, grayscale, randomShuffled);
 
+    // OLD console log
     // console.log(' -= DRAW STATE =-   TOP STATUS CANVAS');
 
     // console.log('original --->', original, ' width: ', original.width, ' height: ', original.height);
