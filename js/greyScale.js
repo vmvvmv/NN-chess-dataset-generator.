@@ -12,7 +12,7 @@ function GreyScale ( canvasShedule ) {
 
 function cloneImg( sourceImage ) {
 
-    return sourceImage.cloneNode(true);
+    return $( this.currentImage).clone();
 
 }
 
@@ -20,7 +20,7 @@ GreyScale.prototype.grey = function ( image, callback ) {
 
     this.canvasShedule.clearRect();
 
-    console.log(callback);
+    // console.log(callback);
 
     var width = image.width;
     var height = image.height;
@@ -51,40 +51,26 @@ GreyScale.prototype.grey = function ( image, callback ) {
 
             this.canvasShedule.ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
             this.currentImage.src = this.canvasShedule.canvas.toDataURL("image/png", 1);
+
+            var image = new Image();
+            image.src =  this.currentImage.src;
+
+            console.log(this.currentImage.src);
+
+
             this.canvasShedule.canvas.width = 400;
             this.canvasShedule.canvas.height = 400;
             this.canvasShedule.ctx = this.canvasShedule.canvas.getContext('2d');
             this.canvasShedule.clearRect();
         
             // possible return image data and call putData instead drawImage
-            return cloneImg(this.currentImage);
+            // console.log('clon here');
+            // return cloneImg(this.currentImage); 
+
+            return image;
 
         }
     }
-
-
-    // var image = new Image();
-    // console.log('image onload start');
-    // var that = this;
-    // image.onload = function() {
-        
-    //     console.log('onload im');
-
-    //     image.src = this.canvasShedule.canvas.toDataURL("image/png", 1);
-
-    //     that.canvasShedule.canvas.width = 400;
-    //     that.canvasShedule.canvas.height = 400;
-    //     that.canvasShedule.ctx = that.canvasShedule.canvas.getContext('2d');
-    //     that.canvasShedule.clearRect();
-        
-    //     console.log(callback, 'image callback');
-    //     callback(image);
-
-    // };
-
-
-    // console.log(this.canvasShedule.canvas.toDataURL("image/png", 1));
-
 
 }
 

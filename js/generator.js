@@ -19,21 +19,6 @@ generator.next = function () {
 
         var grayIM;
 
-        // var callback = function( image ) {
-
-        //     grayIM = image;
-        //     console.log( 'grayIM in callback seqDraw', grayIM );
-
-        //     var testState = makeDrawState(figuresSet[generator.position].image, grayIM, grayIM);
-        //     prevCanvasShedule.customDraw(testState);
-    
-        //     if( generator.position < figuresSet.length - 1 )
-        //         generator.position++;
-        //     else 
-        //         console.log('set is over');
-            
-        // }
-
         grayIM = image;
         console.log( 'grayIM in callback seqDraw', grayIM );
 
@@ -54,6 +39,8 @@ generator.next = function () {
 generator.sequance = function () {
 
     for ( var i = generator.position; i < figuresSet.length - 1; i++ ) {
+
+        console.log( i );
 
         if(state.mode === 0 )
         return;
