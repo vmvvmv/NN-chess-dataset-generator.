@@ -1,6 +1,8 @@
 // script for load all images from figures-dataset. 
 var figuresSet = [];
 
+var greyScaleSet = [];
+
 // 1-2 black officer
 
 function getType( index ) {

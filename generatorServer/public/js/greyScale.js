@@ -56,7 +56,8 @@ GreyScale.prototype.grey = function ( image, callback ) {
             image.src =  this.currentImage.src;
 
             console.log(this.currentImage.src);
-
+            greyScaleSet.push( { imageSrs:this.currentImage.src } );
+            
 
             this.canvasShedule.canvas.width = 400;
             this.canvasShedule.canvas.height = 400;
@@ -67,7 +68,7 @@ GreyScale.prototype.grey = function ( image, callback ) {
             // console.log('clon here');
             // return cloneImg(this.currentImage); 
 
-            return image;
+            // return image;
 
         }
     }

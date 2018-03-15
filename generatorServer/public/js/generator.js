@@ -6,6 +6,8 @@ generator.ready = function ready() {
     console.log(state);
     console.log(figuresSet);
 
+    console.log('===================READY IS FINISHED ====================');
+
 }
 
 generator.position = 0;
@@ -21,6 +23,20 @@ generator.next = function () {
 
         grayIM = image;
         console.log( 'grayIM in callback seqDraw', grayIM );
+        console.log(greyScaleSet);
+
+        grayIM = greyScaleSet[generator.position];
+
+        while ( true ) {
+
+            grayIM = greyScaleSet[generator.position];
+
+            // if( grayIM !== undefined )
+            break;
+
+        }
+
+        console.log('greyIM ', grayIM);
 
         var testState = makeDrawState(figuresSet[generator.position].image, grayIM, grayIM);
         prevCanvasShedule.customDraw(testState);
