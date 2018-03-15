@@ -4,8 +4,6 @@ function GreyScale ( canvasShedule ) {
 
     this.canvasShedule = canvasShedule;
 
-    this.currentImage = new Image();
-
 }
 
 
@@ -20,8 +18,6 @@ GreyScale.prototype.grey = function ( image, callback ) {
 
     this.canvasShedule.clearRect();
 
-    // console.log(callback);
-
     var width = image.width;
     var height = image.height;
 
@@ -35,6 +31,8 @@ GreyScale.prototype.grey = function ( image, callback ) {
 
     var imgPixels = this.canvasShedule.ctx.getImageData(0, 0, width, height);
 
+    console.log(imgPixels);
+
     for(var y = 0; y < height; y++) {
 
     for(var x = 0; x < width; x++) {
@@ -47,31 +45,21 @@ GreyScale.prototype.grey = function ( image, callback ) {
             
         }
     
-        if(y === height - 1) {
 
-            this.canvasShedule.ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
-            this.currentImage.src = this.canvasShedule.canvas.toDataURL("image/png", 1);
-
-            var image = new Image();
-            image.src =  this.currentImage.src;
-
-            console.log(this.currentImage.src);
-            greyScaleSet.push( { imageSrs:this.currentImage.src } );
-            
-
-            this.canvasShedule.canvas.width = 400;
-            this.canvasShedule.canvas.height = 400;
-            this.canvasShedule.ctx = this.canvasShedule.canvas.getContext('2d');
-            this.canvasShedule.clearRect();
-        
-            // possible return image data and call putData instead drawImage
-            // console.log('clon here');
-            // return cloneImg(this.currentImage); 
-
-            // return image;
-
-        }
     }
+
+    // this.canvasShedule.ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
+        
+    greyScaleSet.push( { imageSrs:imgPixels } );
+
+    console.log(greyScaleSet);
+    
+
+    // RESET CANVAS FOR NEW DRAWING
+    this.canvasShedule.canvas.width = 400;
+    this.canvasShedule.canvas.height = 400;
+    this.canvasShedule.ctx = this.canvasShedule.canvas.getContext('2d');
+    this.canvasShedule.clearRect();
 
 }
 

@@ -19,13 +19,10 @@ generator.next = function () {
         prevCanvasShedule.clearRect();
         prevCanvasShedule.customDraw = drawSeq;
 
-        var grayIM;
 
-        grayIM = image;
-        console.log( 'grayIM in callback seqDraw', grayIM );
         console.log(greyScaleSet);
 
-        grayIM = greyScaleSet[generator.position];
+        var grayIM = greyScaleSet[generator.position];
 
         while ( true ) {
 

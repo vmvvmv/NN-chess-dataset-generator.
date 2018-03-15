@@ -27,9 +27,15 @@ canvasShedule.prototype.drawImage = function ( img, x, y ) {
 
 }
 
-canvasShedule.prototype.putData = function ( imgSrc, x, y ) { 
+canvasShedule.prototype.putData = function ( imgSrc, x, y, width, height ) { 
 
-    this.ctx.putImageData(imgSrc, x, y, 0, 0, imgPixels.width, imgPixels.height);
+    width = 100;
+
+    height = 100;
+
+    console.log(imgSrc);
+
+    // this.ctx.putImageData( imgSrc, x, y, 0, 0, width, height );
 
 
 }
