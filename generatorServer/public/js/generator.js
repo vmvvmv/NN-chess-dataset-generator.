@@ -22,6 +22,7 @@ generator.next = function () {
         if( generator.setIsOver ) {
 
             console.log('set is over')
+            console.log('generated items: ', trainingData.length );
             return;
 
         }

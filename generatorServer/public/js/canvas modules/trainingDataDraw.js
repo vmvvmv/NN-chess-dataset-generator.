@@ -11,7 +11,7 @@ drawTrainingData = function () {
 
         for ( var j = 0; j < sqCanvasShedule.width; j+= 25) {
 
-            var index = ( i + j ) / 25;
+            var index = i + ( j  / 25 );
 
             // console.log(index);
 
@@ -19,7 +19,7 @@ drawTrainingData = function () {
 
                 // console.log( trainingData[index]);
                 // console.log(j, i);
-                sqCanvasShedule.putData( trainingData[index].imageSrc, j, i, 25, 25);
+                sqCanvasShedule.putData( trainingData[index].imageSrc, 25 + j, 25 + i + 25*(i/25), 25, 25);
 
             }
             else { 
