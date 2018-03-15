@@ -6,9 +6,11 @@ function GreyScale ( canvasShedule ) {
 
 }
 
-GreyScale.prototype.grey = function ( image ) {
+GreyScale.prototype.grey = function ( image, callback ) {
 
     this.canvasShedule.clearRect();
+
+    console.log(callback);
 
     var width = image.width;
     var height = image.height;
@@ -39,14 +41,22 @@ GreyScale.prototype.grey = function ( image ) {
     this.canvasShedule.ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
 
     var image = new Image();
-    image.src = this.canvasShedule.canvas.toDataURL("image/png", 1);
+    console.log('image onload start');
+    var that = this;
+    image.onload = function() {
+        
+        image.src = this.canvasShedule.canvas.toDataURL("image/png", 1);
 
-    this.canvasShedule.canvas.width = 400;
-    this.canvasShedule.canvas.height = 400;
-    this.canvasShedule.ctx = this.canvasShedule.canvas.getContext('2d');
-    this.canvasShedule.clearRect();
-    
-    return image;
+        that.canvasShedule.canvas.width = 400;
+        that.canvasShedule.canvas.height = 400;
+        that.canvasShedule.ctx = that.canvasShedule.canvas.getContext('2d');
+        that.canvasShedule.clearRect();
+        
+        console.log(callback, 'image callback');
+        callback(image);
+
+    };
+
 
 }
 

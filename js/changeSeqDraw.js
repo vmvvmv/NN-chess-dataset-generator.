@@ -24,6 +24,8 @@ function drawSeq ( drawState ) {
 
 function makeDrawState ( original, grayscale, randomShuffled ) {
 
+    console.log(' params ', original, grayscale, randomShuffled);
+
     console.log(' -= DRAW STATE =-   TOP STATUS CANVAS');
 
     console.log('original --->', original, ' width: ', original.width, ' height: ', original.height);

@@ -16,18 +16,27 @@ generator.next = function () {
         sqCanvasShedule.clearRect('#d3d3d3');
         prevCanvasShedule.clearRect();
         prevCanvasShedule.customDraw = drawSeq;
+
+        var grayIM;
+
+        var callback = function( image ) {
+
+            grayIM = image;
+            console.log( 'grayIM in callback seqDraw', grayIM );
+
+            var testState = makeDrawState(figuresSet[generator.position].image, grayIM, grayIM);
+            prevCanvasShedule.customDraw(testState);
     
-        var grayIM = greyScale.grey(figuresSet[generator.position].image);
+            if( generator.position < figuresSet.length - 1 )
+                generator.position++;
+            else 
+                console.log('set is over');
+            
+        }
+
+        greyScale.grey(figuresSet[generator.position].image, callback);
         // var rIM = randomShuffled.shuffle(grayIM);
     
-        var testState = makeDrawState(figuresSet[generator.position].image, grayIM, grayIM);
-        prevCanvasShedule.customDraw(testState);
-
-        if( generator.position < figuresSet.length - 1 )
-            generator.position++;
-        else 
-            console.log('set is over');
-
 }
 
 generator.sequance = function () {
