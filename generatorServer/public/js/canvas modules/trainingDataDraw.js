@@ -22,8 +22,12 @@ drawTrainingData = function () {
 
                 // console.log( trainingData[index]);
                 // console.log(j, i);
-                sqCanvasShedule.ctx.fillText(index ,25 + j + j, 25 + i + 25*(i/25) );
-                sqCanvasShedule.putData( trainingData[index].imageSrc, 25 + j + j, 25 + i + 25*(i/25), 25, 25);
+                sqCanvasShedule.ctx.fillStyle="black";
+                sqCanvasShedule.ctx.fillText( index  ,25 + j + j, 25 + i * 2.5 );
+                sqCanvasShedule.ctx.fillStyle="red";
+                sqCanvasShedule.ctx.fillText( trainingData[index].type ,25 + j + j, 25+15 + i * 2.5  );
+
+                sqCanvasShedule.putData( trainingData[index].imageSrc, 25 + j + j, 25+17 + i * 2.5 , 25, 25);
 
             }
             else { 

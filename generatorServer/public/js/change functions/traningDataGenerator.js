@@ -7,7 +7,7 @@ function TraningDataGenerator ( canvasShedule ) {
 
 }
 
-TraningDataGenerator.prototype.makeTrainData = function ( image ) {
+TraningDataGenerator.prototype.makeTrainData = function ( image, type ) {
 
     // console.log(image);
 
@@ -22,7 +22,7 @@ TraningDataGenerator.prototype.makeTrainData = function ( image ) {
     var imgPixels = this.canvasShedule.ctx.getImageData(0, 0, this.trainWidth, this.trainHeight);
 
     // console.log(imgPixels);// NEED add type of piece
-    trainingData.push( { imageSrc:imgPixels} );
+    trainingData.push( { imageSrc:imgPixels, type: type} );
 
     this.canvasShedule.canvas.width = image.width;
     this.canvasShedule.canvas.height = image.height;

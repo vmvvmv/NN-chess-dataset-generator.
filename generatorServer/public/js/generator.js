@@ -61,7 +61,8 @@ generator.next = function () {
 
             // console.log('train image generated');
             var newRim = shuffLedSet[generator.position];
-            traningDataGenerator.makeTrainData( newRim );
+            var type = getType(generator.position + 1);
+            traningDataGenerator.makeTrainData( newRim, type );
 
         }
 
