@@ -35,7 +35,7 @@ canvasShedule.prototype.putData = function ( imgSrc, x, y, width, height ) {
 
     console.log(imgSrc);
 
-    // this.ctx.putImageData( imgSrc, x, y, 0, 0, width, height );
+    this.ctx.putImageData( imgSrc, x, y, 0, 0, width, height );
 
 
 }

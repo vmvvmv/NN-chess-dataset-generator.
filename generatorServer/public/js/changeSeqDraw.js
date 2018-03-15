@@ -3,6 +3,8 @@ function drawSeq ( drawState ) {
 
     this.clearRect();
 
+    console.log(drawState);
+
     var offset = 100;
 
     this.ctx.font = "17px Arial";
@@ -12,12 +14,12 @@ function drawSeq ( drawState ) {
     this.drawImage( drawState.original, 0 + offset, offset);
     this.ctx.fillText("original",0 + offset, offset / 2 );
 
-    // console.log(drawState.grayscale);
+    console.log(drawState.grayscale);
     // var grWidth = drawState.grayscale[0].length + orWidth;
     var grWidth = 100;
 
-    // this.putData( drawState.grayscale, grWidth + offset , offset);
-    // this.ctx.fillText("grayscale", grWidth + offset , offset / 2);
+    this.putData( drawState.grayscale, grWidth + offset , offset);
+    this.ctx.fillText("grayscale", grWidth + offset , offset / 2);
 
     // var rsWidth = drawState.randomShuffled[0].length  + grWidth;
     // this.putData( drawState.randomShuffled, rsWidth + offset * 2, offset);

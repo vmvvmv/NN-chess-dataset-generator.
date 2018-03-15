@@ -21,31 +21,23 @@ generator.next = function () {
 
 
         console.log(greyScaleSet);
+        greyScale.grey(figuresSet[generator.position].image);
+        var grayIM = greyScaleSet[generator.position].imageSrc;
 
-        var grayIM = greyScaleSet[generator.position];
-
-        while ( true ) {
-
-            grayIM = greyScaleSet[generator.position];
-
-            // if( grayIM !== undefined )
-            break;
-
-        }
+        // var rIM = randomShuffled.shuffle(grayIM);
 
         console.log('greyIM ', grayIM);
 
         var testState = makeDrawState(figuresSet[generator.position].image, grayIM, grayIM);
         prevCanvasShedule.customDraw(testState);
 
+
+
+        //-------------------------set is over code -------------------
         if( generator.position < figuresSet.length - 1 )
             generator.position++;
         else 
-            console.log('set is over');
-
-        var callback = null;
-        greyScale.grey(figuresSet[generator.position].image, callback);
-        // var rIM = randomShuffled.shuffle(grayIM);
+            console.log('set is over')
     
 }
 

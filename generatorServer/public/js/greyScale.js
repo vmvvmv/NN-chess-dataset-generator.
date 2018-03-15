@@ -50,7 +50,7 @@ GreyScale.prototype.grey = function ( image, callback ) {
 
     // this.canvasShedule.ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
         
-    greyScaleSet.push( { imageSrs:imgPixels } );
+    greyScaleSet.push( { imageSrc:imgPixels } );
 
     console.log(greyScaleSet);
     
