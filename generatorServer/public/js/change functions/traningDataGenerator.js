@@ -22,7 +22,7 @@ TraningDataGenerator.prototype.makeTrainData = function ( image ) {
     var imgPixels = this.canvasShedule.ctx.getImageData(0, 0, this.trainWidth, this.trainHeight);
 
     // console.log(imgPixels);// NEED add type of piece
-    trainingData.push( { imageSrs:imgPixels} );
+    trainingData.push( { imageSrc:imgPixels} );
 
     this.canvasShedule.canvas.width = image.width;
     this.canvasShedule.canvas.height = image.height;

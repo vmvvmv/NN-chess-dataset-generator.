@@ -15,9 +15,9 @@ generator.setIsOver = false;
 
 generator.next = function () {
 
-        console.log('grey set', greyScaleSet);
-        console.log('random shuffled state', shuffLedSet);
-        console.log('train data', trainingData);
+        // console.log('grey set', greyScaleSet);
+        // console.log('random shuffled state', shuffLedSet);
+        // console.log('train data', trainingData);
         //-------------------------set is over code -------------------
         if( generator.setIsOver ) {
 
@@ -38,7 +38,7 @@ generator.next = function () {
         }
 
 // ------------- If set is not over - prev canvas shedule TEST
-        sqCanvasShedule.clearRect('#d3d3d3');
+        
         prevCanvasShedule.clearRect();
         prevCanvasShedule.customDraw = drawSeq;
 
@@ -62,6 +62,9 @@ generator.next = function () {
             traningDataGenerator.makeTrainData( grayIM );
 
         }
+
+        sqCanvasShedule.clearRect('#d3d3d3');
+        sqCanvasShedule.customDraw();
 
 
         //-------------------------------------------------------------------------------
