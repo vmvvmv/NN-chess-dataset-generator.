@@ -10,11 +10,31 @@ generator.ready = function ready() {
 
 }
 
-generator.position = 0;
+generator.position = -1;
+generator.setIsOver = false;
 
 generator.next = function () {
 
-        // prev canvas shedule TEST
+        //-------------------------set is over code -------------------
+        if( generator.setIsOver ) {
+
+            console.log('set is over')
+            return;
+
+        }
+
+        if( generator.position < figuresSet.length - 1 ){
+            generator.position++;
+        }
+        else { 
+
+            generator.setIsOver = true;
+            console.log('set is over')
+            return;
+            
+        }
+
+// ------------- If set is not over - prev canvas shedule TEST
         sqCanvasShedule.clearRect('#d3d3d3');
         prevCanvasShedule.clearRect();
         prevCanvasShedule.customDraw = drawSeq;
@@ -30,24 +50,32 @@ generator.next = function () {
         var testState = makeDrawState(figuresSet[generator.position].image, grayIM, rIM);
         prevCanvasShedule.customDraw(testState);
 
-        //-------------------------set is over code -------------------
-        if( generator.position < figuresSet.length - 1 )
-            generator.position++;
-        else 
-            console.log('set is over')
+
     
 }
 
 generator.sequance = function () {
 
-    for ( var i = generator.position; i < figuresSet.length - 1; i++ ) {
+    if( !generator.setIsOver ) { 
 
-        console.log( i );
+            for ( var i = generator.position; i < figuresSet.length - 1; i++ ) {
 
-        if(state.mode === 0 )
-        return;
+                console.log( i );
+                
+                console.log('grey set', greyScaleSet);
+                console.log('random shuffled state', shuffLedSet);
+                
+                if(state.mode === 0 )
+                return;
+                
+                generator.next();
 
-        generator.next();
+        }
+    }
+
+    else {
+
+        console.log( 'set is over' );
 
     }
 
