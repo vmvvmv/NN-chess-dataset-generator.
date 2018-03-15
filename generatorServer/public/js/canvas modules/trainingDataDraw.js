@@ -5,16 +5,18 @@ drawTrainingData = function () {
 
     // console.log(sqCanvasShedule);
 
-    // train data is 25 x 25 
+    // train data is trSize x trSize 
+
+    var trSize = 50;
 
     sqCanvasShedule.ctx.font = "17px Arial";
     sqCanvasShedule.ctx.fillStyle="black";
 
-    for ( var i = 0; i < sqCanvasShedule.height; i+= 25) {
+    for ( var i = 0; i < sqCanvasShedule.height; i+= trSize) {
 
-        for ( var j = 0; j < sqCanvasShedule.width; j+= 25) {
+        for ( var j = 0; j < sqCanvasShedule.width; j+= trSize) {
 
-            var index = i + ( j  / 25 );
+            var index = i + ( j  / trSize );
 
             // console.log(index);
 
@@ -23,11 +25,11 @@ drawTrainingData = function () {
                 // console.log( trainingData[index]);
                 // console.log(j, i);
                 sqCanvasShedule.ctx.fillStyle="black";
-                sqCanvasShedule.ctx.fillText( index  ,25 + j + j, 25 + i * 2.5 );
+                sqCanvasShedule.ctx.fillText( index  ,trSize + j + j, trSize + i * 2.5 );
                 sqCanvasShedule.ctx.fillStyle="red";
-                sqCanvasShedule.ctx.fillText( trainingData[index].type ,25 + j + j, 25+15 + i * 2.5  );
+                sqCanvasShedule.ctx.fillText( trainingData[index].type ,trSize + j + j, trSize+15 + i * 2.5  );
 
-                sqCanvasShedule.putData( trainingData[index].imageSrc, 25 + j + j, 25+17 + i * 2.5 , 25, 25);
+                sqCanvasShedule.putData( trainingData[index].imageSrc, trSize + j + j, trSize+17 + i * 2.5 , trSize, trSize);
 
             }
             else { 
