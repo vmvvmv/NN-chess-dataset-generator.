@@ -82,7 +82,7 @@ for( var i = 1; i < 39; i++) {
 
     var image = new Image();
     image.src = '';
-    image.src = 'figures-dataset/' + i + '.png'; 
+    image.src = '../figures-dataset/' + i + '.png'; 
 
     figuresSet.push( { image:image, type: getType(i) } );
 
