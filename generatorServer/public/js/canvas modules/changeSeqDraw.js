@@ -21,8 +21,8 @@ function drawSeq ( drawState ) {
     this.ctx.fillText("grayscale", grWidth , offset / 2);
 
     // random Shuffled
-    var rsWidth = drawState.grayscale.width + grWidth + offset;
-    this.putData( drawState.randomShuffled.imageSrc, rsWidth, offset);
+    var rsWidth = drawState.randomShuffled.width + grWidth + offset;
+    this.putData( drawState.randomShuffled.imageSrc, rsWidth, offset,  drawState.randomShuffled.width, drawState.randomShuffled.height);
     this.ctx.fillText("random shuffled",rsWidth, offset / 2);
 
 }

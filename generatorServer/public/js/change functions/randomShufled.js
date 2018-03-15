@@ -38,7 +38,7 @@ RandomShuffled.prototype.shuffle = function ( image ) {
     this.canvasShedule.ctx.putImageData(imgPixels, 0, 0, 0, 0, randomResizeWidth, randomResizeHeight);
 
     var shuffledSrc = this.canvasShedule.ctx.getImageData(0, 0, originalWidth, originalHeight);
-    // this.canvasShedule.clearRect();
+    this.canvasShedule.clearRect();
 
     console.log(shuffledSrc);
 
