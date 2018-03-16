@@ -9,7 +9,7 @@ generator.ready = function ready() {
     console.log('===================READY IS FINISHED ====================');
 
     $("#status").html('dataset is loaded <br> length:' + figuresSet.length + '<br>'
-        + ' for start generate click > <br>' + 'or change mode to <br> <b>sequance </b> and click START' 
+        + ' for start generate click <b>></b> <br>' + 'or change mode to <br> <b>sequance </b> and click START' 
         + '<br> set up <b>range</b>(optional)');
 
 
