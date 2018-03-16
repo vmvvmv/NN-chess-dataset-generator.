@@ -24,12 +24,43 @@ function generateOutput ( type ) {
 
 function generateInput ( dataArr ) {
 
-    console.log(dataArr);
+    
+    var normalArray = Array.from(dataArr);
+    // console.log(normalArray);
+
+    var input = [];
+
+    // 625
+
+    for ( var i = 0; i < normalArray.length - 3; i+=4 ) {
+
+        var pixelRGBsumm = normalArray[i] + normalArray[i + 1] + normalArray[i + 2];
+
+        input.push( pixelRGBsumm / 255);
+
+    }
+
+    return input;
+
+}
+
+function createExportJson() {
+
+    for ( var tr of trainingData ) {
+
+        var input = generateInput( tr.imageSrc.data );
+        var output = generateOutput(tr.type);
+
+        exportTrainingSet.push( { input:input, output: output } );
+
+    }
 
 }
 
 
 downloadJSON = function () {
+
+    createExportJson();
 
     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportTrainingSet));
     var dlAnchorElem = document.getElementById('downloadAnchorElem');
@@ -37,7 +68,7 @@ downloadJSON = function () {
     dlAnchorElem.setAttribute("download", "chess-nn.json");
     dlAnchorElem.click();
 
-    console.log( exportTrainingSet );
+    console.log( 'Browser may block large JSON',exportTrainingSet );
     exportTrainingSet = [];
 
 }

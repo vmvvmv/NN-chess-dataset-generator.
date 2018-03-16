@@ -4,7 +4,7 @@ var state = {
     mode:0,
 
     // 2 - 8 
-    generedPerTitle: 2,
+    generedPerTitle: 4,
 
     isPlayed: false
 
