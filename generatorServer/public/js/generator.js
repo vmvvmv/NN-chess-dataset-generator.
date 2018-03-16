@@ -15,19 +15,20 @@ generator.setIsOver = false;
 
 generator.next = function () {
 
-        // console.log('grey set', greyScaleSet);
-        // console.log('random shuffled state', shuffLedSet);
-        // console.log('train data', trainingData);
+
         //-------------------------set is over code -------------------
         if( generator.setIsOver ) {
 
             console.log('set is over')
             console.log('generated items: ', trainingData.length );
+            console.log('grey set', greyScaleSet);
+            console.log('random shuffled state', shuffLedSet);
+            console.log('train data', trainingData);
             return;
 
         }
 
-        if( generator.position < figuresSet.length - 1 ){
+        if( generator.position < figuresSet.length - 1 ) {
             generator.position++;
         }
         else { 
@@ -66,10 +67,8 @@ generator.next = function () {
 
         }
 
+        
 
-
-
-        //-------------------------------------------------------------------------------
     
 }
 
@@ -79,10 +78,6 @@ generator.sequance = function () {
 
             for ( var i = generator.position; i < figuresSet.length - 1; i++ ) {
 
-                // console.log( i );
-                
-                // this part must by async
-                // console.log(state.mode);
                 if(state.mode === 0 )
                 return;
 
