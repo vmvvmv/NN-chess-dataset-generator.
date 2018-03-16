@@ -67,9 +67,6 @@ generator.next = function () {
 
         }
 
-        
-
-    
 }
 
 generator.sequance = function () {

@@ -84,7 +84,7 @@ function getType( index ) {
 }
 
 // 39 size of original dataset
-for( var i = 1; i < 39; i++) { 
+for( var i = 1; i <= 39; i++) { 
 
     var image = new Image();
     image.src = '';
