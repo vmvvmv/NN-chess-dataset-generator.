@@ -6,7 +6,7 @@ function TraningDataGenerator ( canvasShedule ) {
     this.trainHeight = 25;
 
     //deegre
-    this.maxRotaionAngle = 20;
+    this.maxRotaionAngle = 7;
 
 }
 
@@ -20,6 +20,10 @@ TraningDataGenerator.prototype.getRandomRotaion = function () {
 
     var random = Math.random();
     var randomAngle = this.maxRotaionAngle * random;
+
+    var random2 = Math.random();
+
+    random2 > 0.5 ? randomAngle*= -1: randomAngle;
 
     console.log(randomAngle);
 
