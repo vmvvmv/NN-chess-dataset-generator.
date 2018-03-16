@@ -16,6 +16,10 @@ function deegreToRadians (degrees) {
 
 };
 
+function rgbToHex(r, g, b) {
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
 TraningDataGenerator.prototype.getRandomRotaion = function () {
 
     var random = Math.random();
@@ -25,7 +29,7 @@ TraningDataGenerator.prototype.getRandomRotaion = function () {
 
     random2 > 0.5 ? randomAngle*= -1: randomAngle;
 
-    console.log(randomAngle);
+    // console.log(randomAngle);
 
     return deegreToRadians(randomAngle);
 
@@ -47,10 +51,16 @@ TraningDataGenerator.prototype.makeTrainData = function ( image, type ) {
     var that = this;
     fitImage.onload = function() {
 
-        that.canvasShedule.clearRect('#d3d3d3');
-        //------------------RANDOM ROTAION ---------------------------
+        var R = image.imageSrc.data[0];
+        var G = image.imageSrc.data[1];
+        var B = image.imageSrc.data[2];
 
-        // console.log(that.getRandomRotaion());
+        var clearBackGroundColor = rgbToHex(R,G,B);
+
+        // console.log(rgbToHex(R,G,B));
+
+        that.canvasShedule.clearRect(clearBackGroundColor);
+        //------------------RANDOM ROTAION ---------------------------
 
         var randomRotation = that.getRandomRotaion();
         //-----------------------------------------------------------
@@ -65,17 +75,15 @@ TraningDataGenerator.prototype.makeTrainData = function ( image, type ) {
         that.canvasShedule.ctx.drawImage(fitImage, -width / 2, -height / 2, width, height);
         that.canvasShedule.ctx.rotate(-randomRotation);
         that.canvasShedule.ctx.translate(-x, -y);
-
-        // debugger;
-
-
-        // that.canvasShedule.ctx.drawImage( fitImage, 0, 0, that.trainWidth,  that.trainHeight );
     
         // debugger;
+
+        var selectX = width / 2 + that.trainWidth;
+        var selectY = height / 2 + that.trainHeight;
     
-        var imgPixels = that.canvasShedule.ctx.getImageData(0, 0, that.trainWidth, that.trainHeight);
+        var imgPixels = that.canvasShedule.ctx.getImageData( selectX, selectY, that.trainWidth, that.trainHeight );
     
-        // console.log(imgPixels);// NEED add type of piece
+        // NEED add type of piece for export
         trainingData.push( { imageSrc:imgPixels, type: type} );
     
 
