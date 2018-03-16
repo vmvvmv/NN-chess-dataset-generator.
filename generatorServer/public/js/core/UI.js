@@ -49,5 +49,7 @@ function initUI() {
 
     });
 
+    $('#json').click( downloadJSON );
+
 }
 

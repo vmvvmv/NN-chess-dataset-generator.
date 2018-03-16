@@ -21,3 +21,24 @@ function generateOutput ( type ) {
     return output;
 
 }
+
+function generateInput ( dataArr ) {
+
+    console.log(dataArr);
+
+}
+
+
+downloadJSON = function () {
+
+    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportTrainingSet));
+    var dlAnchorElem = document.getElementById('downloadAnchorElem');
+    dlAnchorElem.setAttribute("href",     dataStr     );
+    dlAnchorElem.setAttribute("download", "chess-nn.json");
+    dlAnchorElem.click();
+
+    console.log( exportTrainingSet );
+    exportTrainingSet = [];
+
+}
+
