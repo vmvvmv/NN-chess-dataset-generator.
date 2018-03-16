@@ -45,6 +45,7 @@ generator.next = function () {
             // console.log('');
 
             $("#status").html('For download data click download zip');
+            // $('#status_form')
 
         }
 
