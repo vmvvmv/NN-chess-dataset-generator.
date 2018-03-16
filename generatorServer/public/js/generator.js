@@ -8,6 +8,11 @@ generator.ready = function ready() {
 
     console.log('===================READY IS FINISHED ====================');
 
+    $("#status").html('dataset is loaded <br> length:' + figuresSet.length + '<br>'
+        + ' for start generate click > <br>' + 'or change mode to <br> <b>sequance </b> and click START' 
+        + '<br> set up <b>range</b>(optional)');
+
+
 }
 
 generator.position = -1;
@@ -15,57 +20,58 @@ generator.setIsOver = false;
 
 generator.next = function () {
 
+    //-------------------------set is over code -------------------
+    if( generator.setIsOver ) {
 
-        //-------------------------set is over code -------------------
-        if( generator.setIsOver ) {
+        
+        console.log('generated items: ', trainingData.length );
+        console.log('grey set', greyScaleSet);
+        console.log('random shuffled state', shuffLedSet);
+        console.log('train data', trainingData);
+        console.log('---------------------------------------------')
+        console.log('set is over')
+        console.log('for new generation reload page')
+        return;
 
-            console.log('set is over')
-            console.log('generated items: ', trainingData.length );
-            console.log('grey set', greyScaleSet);
-            console.log('random shuffled state', shuffLedSet);
-            console.log('train data', trainingData);
-            return;
+    }
+    if( generator.position < figuresSet.length - 1 ) {
 
-        }
+        generator.position++;
 
-        if( generator.position < figuresSet.length - 1 ) {
-            generator.position++;
-        }
-        else { 
+        if( generator.position  ===  figuresSet.length - 1) {
 
             generator.setIsOver = true;
-            console.log('set is over')
-            return;
-            
-        }
+            console.log('set is over');
+            // console.log('');
 
-// ------------- If set is not over - prev canvas shedule TEST
-        
-        prevCanvasShedule.clearRect();
-        prevCanvasShedule.customDraw = drawSeq;
-
-
-        // console.log(greyScaleSet);
-        greyScale.grey(figuresSet[generator.position].image);
-        var grayIM = greyScaleSet[generator.position];
-
-        randomShuffled.shuffle(grayIM);
-        var rIM = shuffLedSet[generator.position];
-
-        var testState = makeDrawState(figuresSet[generator.position].image, grayIM, rIM);
-        prevCanvasShedule.customDraw(testState);
-
-        //---------------PART FOR TRAINING DATA GENERATOR -------------------------------
-
-
-        for ( var i = 0; i < state.generedPerTitle; i++ ) {
-
-            // console.log('train image generated');
-            var newRim = shuffLedSet[generator.position];
-            var type = getType(generator.position + 1);
-            traningDataGenerator.makeTrainData( newRim, type );
+            $("#status").html('For download data click download zip');
 
         }
+
+    }
+
+    // ------------ If set is not over - prev canvas shedule TEST
+    prevCanvasShedule.clearRect();
+    prevCanvasShedule.customDraw = drawSeq;
+
+    // console.log(greyScaleSet);
+    greyScale.grey(figuresSet[generator.position].image);
+    var grayIM = greyScaleSet[generator.position];
+
+    randomShuffled.shuffle(grayIM);
+    var rIM = shuffLedSet[generator.position];
+
+    var testState = makeDrawState(figuresSet[generator.position].image, grayIM, rIM);
+    prevCanvasShedule.customDraw(testState);
+    //---------------PART FOR TRAINING DATA GENERATOR -------------------------------
+    for ( var i = 0; i < state.generedPerTitle; i++ ) {
+
+        // console.log('train image generated');
+        var newRim = shuffLedSet[generator.position];
+        var type = getType(generator.position + 1);
+        traningDataGenerator.makeTrainData( newRim, type );
+
+    }
 
 }
 
