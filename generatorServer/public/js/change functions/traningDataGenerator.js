@@ -5,6 +5,26 @@ function TraningDataGenerator ( canvasShedule ) {
     this.trainWidth = 25;
     this.trainHeight = 25;
 
+    //deegre
+    this.maxRotaionAngle = 20;
+
+}
+
+function deegreToRadians (degrees) {
+
+    return degrees * Math.PI / 180;
+
+};
+
+TraningDataGenerator.prototype.getRandomRotaion = function () {
+
+    var random = Math.random();
+    var randomAngle = this.maxRotaionAngle * random;
+
+    console.log(randomAngle);
+
+    return deegreToRadians(randomAngle);
+
 }
 
 TraningDataGenerator.prototype.makeTrainData = function ( image, type ) {
@@ -23,8 +43,29 @@ TraningDataGenerator.prototype.makeTrainData = function ( image, type ) {
     var that = this;
     fitImage.onload = function() {
 
-        that.canvasShedule.clearRect();
-        that.canvasShedule.ctx.drawImage( fitImage, 0, 0, that.trainWidth,  that.trainHeight );
+        that.canvasShedule.clearRect('#d3d3d3');
+        //------------------RANDOM ROTAION ---------------------------
+
+        // console.log(that.getRandomRotaion());
+
+        var randomRotation = that.getRandomRotaion();
+        //-----------------------------------------------------------
+
+        var x = that.canvasShedule.canvas.width / 2;
+        var y = that.canvasShedule.canvas.height / 2;
+        var width =  that.trainWidth;
+        var height = that.trainHeight;
+
+        that.canvasShedule.ctx.translate(x, y);
+        that.canvasShedule.ctx.rotate(randomRotation);
+        that.canvasShedule.ctx.drawImage(fitImage, -width / 2, -height / 2, width, height);
+        that.canvasShedule.ctx.rotate(-randomRotation);
+        that.canvasShedule.ctx.translate(-x, -y);
+
+        debugger;
+
+
+        // that.canvasShedule.ctx.drawImage( fitImage, 0, 0, that.trainWidth,  that.trainHeight );
     
         // debugger;
     
