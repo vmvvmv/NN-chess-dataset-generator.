@@ -43,9 +43,9 @@ generator.next = function () {
             generator.setIsOver = true;
             console.log('set is over');
             // console.log('');
-
-            $("#status").html('For download data click download zip');
-            // $('#status_form')
+            
+            // $("#status").html('Generated items:' + trainingData.length +'<br>For download data click download zip');
+            $("#status").html('For download all images click download zip <br> For training-data click <br> dowload JSON');
 
         }
 
