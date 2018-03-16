@@ -62,7 +62,7 @@ TraningDataGenerator.prototype.makeTrainData = function ( image, type ) {
         that.canvasShedule.ctx.rotate(-randomRotation);
         that.canvasShedule.ctx.translate(-x, -y);
 
-        debugger;
+        // debugger;
 
 
         // that.canvasShedule.ctx.drawImage( fitImage, 0, 0, that.trainWidth,  that.trainHeight );
@@ -74,10 +74,6 @@ TraningDataGenerator.prototype.makeTrainData = function ( image, type ) {
         // console.log(imgPixels);// NEED add type of piece
         trainingData.push( { imageSrc:imgPixels, type: type} );
     
-        that.canvasShedule.canvas.width = image.width;
-        that.canvasShedule.canvas.height = image.height;
-        that.canvasShedule.ctx = that.canvasShedule.canvas.getContext('2d');
-        that.canvasShedule.clearRect();
 
         sqCanvasShedule.clearRect('#d3d3d3');
         sqCanvasShedule.customDraw();
