@@ -35,7 +35,7 @@ TraningDataGenerator.prototype.makeTrainData = function ( image, type ) {
         that.canvasShedule.ctx = that.canvasShedule.canvas.getContext('2d');
         that.canvasShedule.clearRect();
     
-        console.log(fitImage.src);
+        // console.log(fitImage.src);
     
         that.canvasShedule.drawImage(fitImage, 0, 0, image.width, image.height);
     
@@ -51,6 +51,9 @@ TraningDataGenerator.prototype.makeTrainData = function ( image, type ) {
         that.canvasShedule.canvas.height = image.height;
         that.canvasShedule.ctx = that.canvasShedule.canvas.getContext('2d');
         that.canvasShedule.clearRect();
+
+        sqCanvasShedule.clearRect('#d3d3d3');
+        sqCanvasShedule.customDraw();
 
     };
 

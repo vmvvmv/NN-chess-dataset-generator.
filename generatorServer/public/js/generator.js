@@ -66,8 +66,7 @@ generator.next = function () {
 
         }
 
-        sqCanvasShedule.clearRect('#d3d3d3');
-        sqCanvasShedule.customDraw();
+
 
 
         //-------------------------------------------------------------------------------
