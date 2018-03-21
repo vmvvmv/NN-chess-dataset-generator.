@@ -8,11 +8,11 @@ console.log('NN');
 
 var exportTrainingSet = [];
 
-var outputLabels =  [ 'BO', 'BKI', 'BK', 'BP', 'BQ', 'BR', 'EC', 'WKI', 'WK', 'WP', 'WQ', 'WR' ];
+var outputLabels =  [ 'BO', 'BKI', 'BK', 'BP', 'BQ', 'BR', 'EC', 'WO', 'WKI', 'WK', 'WP', 'WQ', 'WR' ];
 
 function generateOutput ( type ) {
 
-    var output = [0,0,0,0,0,0,0,0,0,0,0,0];
+    var output = [0,0,0,0,0,0,0,0,0,0,0,0,0];
 
     var correctAnswer = outputLabels.indexOf( type );
 
@@ -36,7 +36,7 @@ function generateInput ( dataArr ) {
 
         var pixelRGBsumm = normalArray[i] + normalArray[i + 1] + normalArray[i + 2];
 
-        input.push( pixelRGBsumm / 255);
+        input.push( pixelRGBsumm / 255 / 3);
 
     }
 

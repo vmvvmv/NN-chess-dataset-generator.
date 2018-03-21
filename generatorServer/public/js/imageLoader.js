@@ -53,6 +53,7 @@ function getType( index ) {
         // 24 - 25 white officer
         case 24:
         case 25:
+            return 'WO';
         // 26 - 27 white king
         case 26:
         case 27:
