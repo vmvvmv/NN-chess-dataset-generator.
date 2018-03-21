@@ -1,10 +1,10 @@
 var state = {
 
     // 0 step by step,  1 sequance
-    mode:0,
+    mode:1,
 
     // 2 - 8 
-    generedPerTitle: 4,
+    generedPerTitle: 8,
 
     isPlayed: false
 
