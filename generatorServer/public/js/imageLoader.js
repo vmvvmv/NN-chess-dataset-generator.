@@ -19,7 +19,7 @@ function getType( index ) {
         case 3:
         case 4:
         case 5:
-            return 'BO';
+            return 'BB';
         // 6-10 black king
         case 6:
         case 7:
