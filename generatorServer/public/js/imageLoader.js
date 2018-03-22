@@ -68,7 +68,7 @@ function getType( index ) {
         case 38:
         case 39:
         case 40:
-            return 'WO';
+            return 'WB';
         // 41 - 45 white king
         case 41:
         case 42:
