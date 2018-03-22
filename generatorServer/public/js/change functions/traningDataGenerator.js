@@ -62,7 +62,8 @@ TraningDataGenerator.prototype.makeTrainData = function ( image, type ) {
         that.canvasShedule.clearRect(clearBackGroundColor);
         //------------------RANDOM ROTAION ---------------------------
 
-        var randomRotation = that.getRandomRotaion();
+        // var randomRotation = that.getRandomRotaion();
+        randomRotation = 0;
         //-----------------------------------------------------------
 
         var x = that.canvasShedule.canvas.width / 2;

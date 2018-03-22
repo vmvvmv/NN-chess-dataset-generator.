@@ -16,8 +16,10 @@ canvasShedule.prototype.clearRect = function ( color ) {
 
     color = color || 'white'
 
-    this.ctx.fillStyle=color;
-    this.ctx.fillRect(0,0,this.width,this.height);
+    // this.ctx.fillStyle=color;
+    // this.ctx.fillRect(0,0,this.width,this.height);
+
+    this.ctx.clearRect(0,0,this.width,this.height);
 
 }
 
