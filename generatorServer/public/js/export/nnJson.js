@@ -8,7 +8,7 @@ console.log('NN');
 
 var exportTrainingSet = [];
 
-var outputLabels =  [ 'BO', 'BKI', 'BK', 'BP', 'BQ', 'BR', 'EC', 'WO', 'WKI', 'WK', 'WP', 'WQ', 'WR' ];
+var outputLabels =  [ 'BB', 'BKI', 'BK', 'BP', 'BQ', 'BR', 'EC', 'WB', 'WKI', 'WK', 'WP', 'WQ', 'WR' ];
 
 function generateOutput ( type ) {
 
