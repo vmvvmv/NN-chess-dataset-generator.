@@ -65,7 +65,7 @@ downloadJSON = function () {
     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportTrainingSet));
     var dlAnchorElem = document.getElementById('downloadAnchorElem');
     dlAnchorElem.setAttribute("href",     dataStr     );
-    dlAnchorElem.setAttribute("download", "chess-nn-front.json");
+    dlAnchorElem.setAttribute("download", "chess-nn-front2.json");
     dlAnchorElem.click();
 
     console.log( 'Browser may block large JSON',exportTrainingSet );

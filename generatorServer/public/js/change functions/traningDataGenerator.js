@@ -71,18 +71,22 @@ TraningDataGenerator.prototype.makeTrainData = function ( image, type ) {
         var width =  that.trainWidth;
         var height = that.trainHeight;
 
-        that.canvasShedule.ctx.translate(x, y);
-        that.canvasShedule.ctx.rotate(randomRotation);
-        that.canvasShedule.ctx.drawImage(fitImage, -width / 2, -height / 2, width, height);
-        that.canvasShedule.ctx.rotate(-randomRotation);
-        that.canvasShedule.ctx.translate(-x, -y);
+        // that.canvasShedule.ctx.translate(x, y);
+        // that.canvasShedule.ctx.rotate(randomRotation);
+        // that.canvasShedule.ctx.drawImage(fitImage, -width / 2, -height / 2, width, height);
+        // that.canvasShedule.ctx.rotate(-randomRotation);
+        // that.canvasShedule.ctx.translate(-x, -y);
+
+        that.canvasShedule.ctx.drawImage(fitImage ,0 , 0, width, height);
     
         // debugger;
 
         var selectX = width / 2 + that.trainWidth;
         var selectY = height / 2 + that.trainHeight;
     
-        var imgPixels = that.canvasShedule.ctx.getImageData( selectX, selectY, that.trainWidth, that.trainHeight );
+        // var imgPixels = that.canvasShedule.ctx.getImageData( selectX, selectY, that.trainWidth, that.trainHeight );
+
+        var imgPixels = that.canvasShedule.ctx.getImageData( 0, 0, that.trainWidth, that.trainHeight );
     
         // NEED add type of piece for export
         trainingData.push( { imageSrc:imgPixels, type: type} );
